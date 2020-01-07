@@ -19,14 +19,15 @@ public class dragon : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.name == "Bone" && (ani.GetCurrentAnimatorStateInfo(0).IsName("atk")))
+        print(other);
+        if (other.name == "Bone" && ani.GetCurrentAnimatorStateInfo(0).IsName("Breath_Gs"))
         {
             Physics.IgnoreCollision(other, GetComponent<Collider>());
             other.GetComponent<HingeJoint>().connectedBody = rigcatch;
         }
-        if (other.name == "沙子" && (ani.GetCurrentAnimatorStateInfo(0).IsName("atk")))
+        if (other.name == "沙子" && ani.GetCurrentAnimatorStateInfo(0).IsName("Breath_Gs"))
         {
-            Physics.IgnoreCollision(other, GetComponent<Collider>());
+            
             GameObject.Find("Bone").GetComponent<HingeJoint>().connectedBody = null;
         }
     }
@@ -46,8 +47,8 @@ public class dragon : MonoBehaviour
     public Transform tran;
     public Rigidbody rig;
     public Animator ani;
-  
 
+    
 
 
     private void Run()

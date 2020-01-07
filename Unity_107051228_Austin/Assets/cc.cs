@@ -10,7 +10,6 @@ public class cc : MonoBehaviour
     private void Update()
     {
         Vector3 pos = Vector3.Lerp(cam.position, target.position, 0.5f * Time.deltaTime * speed);
-        print(pos);
         cam.position = pos;
     }
 }
